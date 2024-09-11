@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="min-h-screen bg-bg md:flex md:items-center md:justify-center">
+      <section class="rounded-2xl bg-white px-8 py-6">
+        <header>
+          <h1 class="mb-8 text-4xl font-bold text-title md:text-6xl">
+            Board de tarefas
+          </h1>
+        </header>
+        <form class="mb-6 flex flex-col items-center gap-4 md:flex-row">
+          <input
+            type="text"
+            placeholder="Nome da tarefa"
+            class="w-full rounded-lg border border-border px-4 py-3 text-text md:w-auto"
+            id="input-text"
+          />
+          <input
+            type="text"
+            placeholder="Etiqueta"
+            class="w-full rounded-lg border border-border px-4 py-3 text-text md:w-auto"
+            id="input-tag"
+          />
+
+          <button
+            id="input-btn"
+            type="submit"
+            class="h-12 w-full rounded-md bg-btn text-white md:size-12"
+          >
+            +
+          </button>
+        </form>
+        <section id="todo-section" class="flex flex-col gap-2 md:gap-4">
+          <article
+            id="template"
+            class="hidden flex-col items-start justify-between rounded-2xl border border-border px-8 py-6 md:flex-row md:items-center"
+          >
+            <div class="mb-2 flex flex-col gap-2 md:mb-0 md:gap-4">
+              <h2 class="font-medium text-taskTitle"></h2>
+              <p
+                class="flex flex-col items-start gap-2 text-sm text-text md:flex-row md:items-center"
+              >
+                <span
+                  class="rounded-2xl border border-border px-1 py-0.5"
+                ></span>
+              </p>
+
+              <div class="flex items-start gap-1 text-sm text-text">
+                Criado em: <time id="task-time" datetime="2024-08-21"> </time>
+              </div>
+            </div>
+            <button
+              id="unchecked-btn"
+              type="button"
+              class="flex h-12 items-center justify-center self-center rounded-md bg-btn px-6 py-3 text-lg text-white transition-all duration-150 hover:bg-blue-950 md:self-auto"
+              onclick="toggleCheckTodo(event)"
+            >
+              <span class="pointer-events-none flex">Concluir</span>
+              <img
+                class="pointer-events-none hidden"
+                src="/src/imgs/checked.svg"
+                alt="checked"
+              />
+            </button>
+          </article>
+        </section>
+        <footer class="mt-6 flex flex-row-reverse text-text">
+          <p><span id="total-tasks-done">0</span> tarefas concluída</p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

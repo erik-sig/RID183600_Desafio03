@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Rubik", sans-serif;
+}
+
+.done h2 {
+  text-decoration: line-through;
+  opacity: 70%;
+}
+
+.done button {
+  background-color: white;
+}
+
+.done button span {
+  display: none;
+}
+.done button img {
+  display: flex;
+}
